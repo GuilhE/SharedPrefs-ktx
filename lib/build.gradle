@@ -35,6 +35,7 @@ android {
 
     lintOptions {
         abortOnError false
+        disable 'TypographyFractions','TypographyQuotes'
     }
 
     // This enables long timeouts required on slow environments, e.g. Travis

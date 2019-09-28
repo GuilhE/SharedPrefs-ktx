@@ -1,10 +1,11 @@
-# SharedPrefsUtils:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefsUtils-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefsUtils&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+# SharedPrefsUtils-ktx:
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefsUtils-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefsUtils-ktx&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
-Save and load objects from SharedPreferences in a faster and simpler way.
+Save and load objects from SharedPreferences in a faster and simpler way.  
+This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
 
 #### Version 1.x
-    - September, 2019    - Kotlin version
+  - **March, 2018** - Kotlin version
 
 ## Getting started
 
@@ -16,14 +17,10 @@ implementation 'com.github.guilhe:SharedPrefsUtils-ktx:${LATEST_VERSION}'
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils-ktx/badge.svg)](https://search.maven.org/search?q=a:SharedPrefsUtils-ktx)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils-ktx/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils-ktx/_latestVersion)
 ## Sample usage
 
-#### SharedPrefsUtils-ktx
-
-This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
-
 To save and load primitive types:
 ```java
 prefs.put("key", 1)
-val a = prefs.get("key", int.class, 1)
+val a = prefs.get("key", Int::class.java, 1)
 ```
 
 To save and load object types:

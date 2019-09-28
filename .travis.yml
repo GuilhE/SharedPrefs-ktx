@@ -13,7 +13,7 @@ env:
     - ANDROID_API_LEVEL=28
     - ANDROID_BUILD_TOOLS_VERSION=29.0.2
     - EMU_NAME=test
-    - EMU_API_LEVEL=22
+    - EMU_API_LEVEL=23
     - EMU_ABI=armeabi-v7a
 #    - EMU_ABI=x86
 

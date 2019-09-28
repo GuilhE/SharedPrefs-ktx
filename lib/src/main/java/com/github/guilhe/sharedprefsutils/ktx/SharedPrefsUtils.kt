@@ -51,7 +51,8 @@ private fun <T> putObject(prefs: SharedPreferences, key: String, value: T, gson:
 
 @Throws(JsonParseException::class)
 private fun <T> getObject(prefs: SharedPreferences, key: String, type: TypeToken<T>, default: T, gson: Gson): T {
-    if (!assertNotNull(key, type)) {
+    if (key.isEmpty()) {
+        Timber.w("> getObject, key must not be empty")
         return default
     }
     val json = prefs.getString(key, null)
@@ -69,7 +70,8 @@ private fun <T> getObject(prefs: SharedPreferences, key: String, type: TypeToken
 
 @Throws(JsonParseException::class)
 private fun <T> getObject(prefs: SharedPreferences, key: String, type: Class<T>, default: T, gson: Gson): T {
-    if (!assertNotNull(key, type)) {
+    if (key.isEmpty()) {
+        Timber.w("> getObject, key must not be empty")
         return default
     }
     val json = prefs.getString(key, null)
@@ -83,16 +85,4 @@ private fun <T> getObject(prefs: SharedPreferences, key: String, type: Class<T>,
             throw JsonParseException("> getObject, Object stored with Key $key is instance of other class.")
         }
     }
-}
-
-private fun <T> assertNotNull(key: String, value: T): Boolean {
-    if (key.isEmpty()) {
-        Timber.w("> getObject, key must not be empty")
-        return false
-    }
-    if (value == null) {
-        Timber.w("> getObject, value must not be null")
-        return false
-    }
-    return true
 }

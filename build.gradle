@@ -24,6 +24,7 @@ allprojects {
     }
 
     tasks.withType(Javadoc) {
+        excludes = ['**/*.kt']
         options.addStringOption('Xdoclint:none', '-quiet')
         options.addStringOption('encoding', 'UTF-8')
     }

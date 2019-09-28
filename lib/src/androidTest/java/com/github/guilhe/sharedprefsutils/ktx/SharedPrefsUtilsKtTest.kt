@@ -6,6 +6,7 @@ import android.os.Parcelable
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.filters.SmallTest
+import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.google.gson.reflect.TypeToken
 import kotlinx.android.parcel.Parcelize
@@ -42,14 +43,14 @@ class SharedPrefsUtilsKtTest {
 
     @Test
     fun putObjectWithClass() {
-        prefs.put("key", 1)
+        prefs.put("key", 1, Gson())
 
         var a = 1
         var b = prefs.get("key", Int::class.java, 1)
         assertEquals(a, b)
 
         a = 2
-        b = prefs.get("KEY", Int::class.java, 2)
+        b = prefs.get("KEY", Int::class.java, 2, Gson())
         assertEquals(a, b)
     }
 
@@ -84,6 +85,12 @@ class SharedPrefsUtilsKtTest {
     }
 
     @Test
+    fun getObjectWithEmptyKey() {
+        assertEquals(2, prefs.get("", Int::class.java, 2))
+        assertEquals(2, prefs.get("", object : TypeToken<Int>() {}, 2, Gson()))
+    }
+
+    @Test
     fun getObjectWithClass() {
         val a = 1
         prefs.put("key", a)
@@ -114,7 +121,7 @@ class SharedPrefsUtilsKtTest {
     @Test(expected = JsonParseException::class)
     fun getObjectWithClassException() {
         prefs.put("key", 1)
-        prefs.get("key", Boolean::class.java, false)
+        prefs.get("key", Boolean::class.java, false, Gson())
     }
 
     @Test
