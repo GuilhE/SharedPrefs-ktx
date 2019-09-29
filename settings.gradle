@@ -1,2 +1,2 @@
-include ':lib'
+include ':SharedPrefsUtils-ktx'
 rootProject.name='android-sharedprefsutils-ktx'
