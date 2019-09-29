@@ -5,7 +5,7 @@ Save and load objects from SharedPreferences in a faster and simpler way.
 This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
 
 #### Version 1.x
-  - **March, 2018** - Kotlin version
+  - **September, 2019** - Kotlin version
 
 ## Getting started
 
@@ -16,6 +16,12 @@ implementation 'com.github.guilhe:SharedPrefsUtils-ktx:${LATEST_VERSION}'
 ```
 [![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils-ktx/badge.svg)](https://search.maven.org/search?q=a:SharedPrefsUtils-ktx)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils-ktx/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils-ktx/_latestVersion)
 ## Sample usage
+Get a hold of `SharedPreferences` instance to use the extensions `put` and `get`:
+```java
+private lateinit var prefs: SharedPreferences
+...
+prefs = appContext.getSharedPreferences("test", Context.MODE_PRIVATE)
+```
 
 To save and load primitive types:
 ```java
