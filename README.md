@@ -18,7 +18,7 @@ implementation 'com.github.guilhe:SharedPrefsUtils-ktx:${LATEST_VERSION}'
 ## Sample usage
 Get a hold of `SharedPreferences` instance to use the extensions `put` and `get`:
 ```java
-private lateinit var prefs: SharedPreferences
+lateinit var prefs: SharedPreferences
 ...
 prefs = appContext.getSharedPreferences("test", Context.MODE_PRIVATE)
 ```
@@ -31,9 +31,9 @@ val a = prefs.get("key", Int::class.java, 1)
 
 To save and load object types:
 ```java
-val list = ArrayList<T>();
-prefs.put("key", list);
-list = prefs.get("key", new TypeToken<List<T>>(){}, new ArrayList<T>()));
+val list = mutableListOf<Int>()
+prefs.put("key", list)
+list = prefs.get("key", object : TypeToken<List<Int>>() {}, mutableListOf()))
 ```
 
 When __not__ using primitive types you should use `TypeToken` instead of `T::class.java`, for example:
@@ -68,8 +68,8 @@ Regarding `assertNotEquals(list, prefs.get("key", List::class.java, ArrayList<In
 
 Also:
 ```java
-prefs.put(prefs, "key", 1);
-prefs.get(prefs, "key", Boolean::class.java, false);
+prefs.put(prefs, "key", 1)
+prefs.get(prefs, "key", Boolean::class.java, false)
 ```
 
 Will throw `JsonParseException`.
