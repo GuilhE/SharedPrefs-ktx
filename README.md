@@ -26,7 +26,7 @@ prefs = appContext.getSharedPreferences("test", Context.MODE_PRIVATE)
 To save and load primitive types:
 ```java
 prefs.put("key", 1)
-val a = prefs.get("key", Int::class.java, 1)
+val a = prefs.get("key", Int::class, 1)
 ```
 
 To save and load object types:
@@ -36,7 +36,7 @@ prefs.put("key", list)
 list = prefs.get("key", object : TypeToken<List<Int>>() {}, mutableListOf()))
 ```
 
-When __not__ using primitive types you should use `TypeToken` instead of `T::class.java`, for example:
+When __not__ using primitive types you should use `TypeToken` instead of `T::class`, for example:
 ```java
     @Test
     fun getObjectWithType() {
@@ -45,7 +45,7 @@ When __not__ using primitive types you should use `TypeToken` instead of `T::cla
         prefs.put("key", list)
 
         assertEquals(list, prefs.get("key", object : TypeToken<List<MyObjectType>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class.java, ArrayList<MyObjectType>()))
+        assertNotEquals(list, prefs.get("key", List::class, ArrayList<MyObjectType>()))
     }
 
     @Test
@@ -55,21 +55,21 @@ When __not__ using primitive types you should use `TypeToken` instead of `T::cla
         prefs.put("key", list)
 
         assertEquals(list, prefs.get("key", object : TypeToken<List<Int>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class.java, ArrayList<Int>()))
+        assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))
     }
 
     @Parcelize data class MyObjectType(val fieldA: String, val fieldB: Int, val fieldC: Boolean) : Parcelable
 ```
 Both tests will ran to completion.
 
-Regarding `assertNotEquals(list, prefs.get("key", List::class.java, ArrayList<Int>()))` being true, I guess it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
+Regarding `assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))` being true, I guess it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
  _"Since Type is not parameterized by T, this method is type unsafe and should be used carefully"_.
  That's why I believe I'm getting `List<Double>` instead of `List<Integer>`.
 
 Also:
 ```java
 prefs.put(prefs, "key", 1)
-prefs.get(prefs, "key", Boolean::class.java, false)
+prefs.get(prefs, "key", Boolean::class, false)
 ```
 
 Will throw `JsonParseException`.

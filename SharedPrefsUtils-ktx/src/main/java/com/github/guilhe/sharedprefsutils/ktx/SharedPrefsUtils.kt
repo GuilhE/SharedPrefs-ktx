@@ -6,6 +6,7 @@ import com.google.gson.JsonParseException
 import com.google.gson.JsonSyntaxException
 import com.google.gson.reflect.TypeToken
 import timber.log.Timber
+import kotlin.reflect.KClass
 
 @Suppress("unused")
 @Throws(IllegalArgumentException::class)
@@ -33,14 +34,14 @@ fun <T> SharedPreferences.get(key: String, type: TypeToken<T>, default: T, gson:
 
 @Suppress("unused")
 @Throws(JsonParseException::class)
-fun <T> SharedPreferences.get(key: String, clazz: Class<T>, default: T): T {
-    return getObject(this, key, clazz, default, Gson())
+fun <T : Any> SharedPreferences.get(key: String, clazz: KClass<T>, default: T): T {
+    return getObject(this, key, clazz.javaObjectType, default, Gson())
 }
 
 @Suppress("unused")
 @Throws(JsonParseException::class)
-fun <T> SharedPreferences.get(key: String, clazz: Class<T>, default: T, gson: Gson): T {
-    return getObject(this, key, clazz, default, gson)
+fun <T : Any> SharedPreferences.get(key: String, klass: KClass<T>, default: T, gson: Gson): T {
+    return getObject(this, key, klass.javaObjectType, default, gson)
 }
 
 private fun <T> putObject(prefs: SharedPreferences, key: String, value: T, gson: Gson): Boolean {

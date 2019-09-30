@@ -46,11 +46,11 @@ class SharedPrefsUtilsKtTest {
         prefs.put("key", 1, Gson())
 
         var a = 1
-        var b = prefs.get("key", Int::class.java, 1)
+        var b = prefs.get("key", Int::class, 1)
         assertEquals(a, b)
 
         a = 2
-        b = prefs.get("KEY", Int::class.java, 2, Gson())
+        b = prefs.get("KEY", Int::class, 2, Gson())
         assertEquals(a, b)
     }
 
@@ -76,7 +76,7 @@ class SharedPrefsUtilsKtTest {
 
     @Test(expected = UnsupportedOperationException::class)
     fun putObjectException2() {
-        prefs.put("key", Int::class.java)
+        prefs.put("key", Int::class)
     }
 
     @Test(expected = UnsupportedOperationException::class)
@@ -86,7 +86,7 @@ class SharedPrefsUtilsKtTest {
 
     @Test
     fun getObjectWithEmptyKey() {
-        assertEquals(2, prefs.get("", Int::class.java, 2))
+        assertEquals(2, prefs.get("", Int::class, 2))
         assertEquals(2, prefs.get("", object : TypeToken<Int>() {}, 2, Gson()))
     }
 
@@ -94,7 +94,7 @@ class SharedPrefsUtilsKtTest {
     fun getObjectWithClass() {
         val a = 1
         prefs.put("key", a)
-        val b = prefs.get("key", Int::class.java, 2)
+        val b = prefs.get("key", Int::class, 2)
         assertEquals(a, b)
     }
 
@@ -105,7 +105,7 @@ class SharedPrefsUtilsKtTest {
         prefs.put("key", list)
 
         assertEquals(list, prefs.get("key", object : TypeToken<List<MyObjectType>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class.java, ArrayList<MyObjectType>()))
+        assertNotEquals(list, prefs.get("key", List::class, ArrayList<MyObjectType>()))
     }
 
     @Test
@@ -115,13 +115,13 @@ class SharedPrefsUtilsKtTest {
         prefs.put("key", list)
 
         assertEquals(list, prefs.get("key", object : TypeToken<List<Int>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class.java, mutableListOf<Int>()))
+        assertNotEquals(list, prefs.get("key", List::class, mutableListOf<Int>()))
     }
 
     @Test(expected = JsonParseException::class)
     fun getObjectWithClassException() {
         prefs.put("key", 1)
-        prefs.get("key", Boolean::class.java, false, Gson())
+        prefs.get("key", Boolean::class, false, Gson())
     }
 
     @Test
@@ -138,7 +138,7 @@ class SharedPrefsUtilsKtTest {
     fun getObjectReturnDefault() {
         prefs.put("key", 1)
         val defaultVal = 2
-        assertEquals(defaultVal, prefs.get("key1", Int::class.java, defaultVal))
+        assertEquals(defaultVal, prefs.get("key1", Int::class, defaultVal))
         assertEquals(defaultVal, prefs.get("key1", object : TypeToken<Int>() {}, defaultVal))
     }
 
