@@ -1,4 +1,4 @@
-package com.github.guilhe.sharedprefsutils.ktx
+package com.github.guilhe.sharedprefs.gson
 
 import android.content.Context
 import android.content.SharedPreferences
@@ -21,7 +21,7 @@ import java.util.*
 
 @RunWith(AndroidJUnit4::class)
 @SmallTest
-class SharedPrefsUtilsKtTest {
+class SharedPrefsKtxTest {
 
     private lateinit var prefs: SharedPreferences
 
