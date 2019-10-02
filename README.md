@@ -15,11 +15,11 @@ The first step is to include SharedPrefs-ktx into your project, for example, as 
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-gson:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-gson)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-gson/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion)
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-moshi)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-moshi/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-moshi)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion)
 
 ## Sample usage
 
