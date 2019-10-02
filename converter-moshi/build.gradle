@@ -52,10 +52,10 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'
     androidTestImplementation 'androidx.test.ext:truth:1.2.0'
 
-    implementation 'com.google.code.gson:gson:2.8.5'
+    implementation 'com.squareup.retrofit2:converter-moshi:2.6.2'
     implementation 'com.jakewharton.timber:timber:4.7.1'
 }
 
 if (project.rootProject.file('local.properties').exists()) {
-    apply from: 'deploy.gradle'
+    apply from: rootProject.file('deploy-bintray.gradle')
 }

@@ -1,4 +1,4 @@
-package com.github.guilhe.sharedprefsutils.ktx
+package com.github.guilhe.sharedprefs.gson
 
 import android.content.SharedPreferences
 import com.google.gson.Gson
@@ -35,13 +35,25 @@ fun <T> SharedPreferences.get(key: String, type: TypeToken<T>, default: T, gson:
 @Suppress("unused")
 @Throws(JsonParseException::class)
 fun <T : Any> SharedPreferences.get(key: String, clazz: KClass<T>, default: T): T {
-    return getObject(this, key, clazz.javaObjectType, default, Gson())
+    return getObject(
+        this,
+        key,
+        clazz.javaObjectType,
+        default,
+        Gson()
+    )
 }
 
 @Suppress("unused")
 @Throws(JsonParseException::class)
 fun <T : Any> SharedPreferences.get(key: String, klass: KClass<T>, default: T, gson: Gson): T {
-    return getObject(this, key, klass.javaObjectType, default, gson)
+    return getObject(
+        this,
+        key,
+        klass.javaObjectType,
+        default,
+        gson
+    )
 }
 
 private fun <T> putObject(prefs: SharedPreferences, key: String, value: T, gson: Gson): Boolean {

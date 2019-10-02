@@ -1,5 +1,5 @@
-# SharedPrefsUtils-ktx:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefsUtils-ktx)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefsUtils-ktx)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefsUtils-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefsUtils-ktx&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefsUtils-ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+# SharedPrefs-ktx:
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefs-ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
 
 Save and load objects from SharedPreferences in a faster and simpler way.  
 This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
@@ -9,12 +9,12 @@ This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://gith
 
 ## Getting started
 
-The first step is to include SharedPrefsUtils-ktx into your project, for example, as a Gradle compile dependency:
+The first step is to include SharedPrefs-ktx into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-implementation 'com.github.guilhe:SharedPrefsUtils-ktx:${LATEST_VERSION}'
+implementation 'com.github.guilhe:sharedprefs-ktx:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefsUtils-ktx/badge.svg)](https://search.maven.org/search?q=a:SharedPrefsUtils-ktx)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefsUtils-ktx/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefsUtils-ktx/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=a:SharedPrefs-ktx)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx/_latestVersion)
 ## Sample usage
 Get a hold of `SharedPreferences` instance to use the extensions `put` and `get`:
 ```java
@@ -76,9 +76,9 @@ Will throw `JsonParseException`.
 
 ## Binaries
 
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=a:SharedPrefsUtils-ktx).
+Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=a:SharedPrefs-ktx).
 
-<a href='https://bintray.com/gdelgado/android/SharedPrefsUtils-ktx?source=watch' alt='Get automatic notifications about new "SharedPrefsUtils-ktx" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
 ## Dependencies
 
@@ -87,7 +87,7 @@ Additional binaries and dependency information for can be found at [https://sear
 
 ## Bugs and Feedback
 
-For bugs, questions and discussions please use the [Github Issues](https://github.com/GuilhE/SharedPrefsUtils-ktx/issues).
+For bugs, questions and discussions please use the [Github Issues](https://github.com/GuilhE/SharedPrefs-ktx/issues).
  
 ## LICENSE
 
