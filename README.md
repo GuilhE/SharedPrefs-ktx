@@ -23,8 +23,8 @@ implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSI
 
 ## Sample usage
 
-To use SharedPreferences with Gson check [here](../converter-gson/README.md)  
-To use SharedPreferences with Moshi check [here](../converter-moshi/README.md)
+To use it with Gson check [here](/converter-gson)  
+To use it with Moshi check [here](/converter-moshi)
 
 ## Dependencies
 

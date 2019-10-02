@@ -46,8 +46,8 @@ When __not__ using primitive types you should use `TypeToken` instead of `T::cla
 ```
 Both tests will ran to completion.
 
-Regarding `assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))` being true, it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
- _"Since Type is not parameterized by T, this method is type unsafe and should be used carefully"_.
+Regarding `assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))` being true, it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:  
+ _"Since Type is not parameterized by T, this method is type unsafe and should be used carefully"_.  
  That's why I believe I'm getting `List<Double>` instead of `List<Integer>`.
 
 Also:
@@ -59,6 +59,6 @@ Will throw `JsonParseException`.
 
 ## Binaries
 Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-gson).  
-<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:gson" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a><a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:gson" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:gson" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
  [1]: https://github.com/google/gson

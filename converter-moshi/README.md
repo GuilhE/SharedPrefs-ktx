@@ -63,6 +63,6 @@ Will throw `ClassCastException`.
 
 ## Binaries
 Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-moshi).  
-<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:moshi" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a><a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:moshi" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:moshi" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
  [1]: https://github.com/square/moshi
