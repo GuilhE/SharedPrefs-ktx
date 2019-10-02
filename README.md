@@ -1,88 +1,35 @@
 # SharedPrefs-ktx:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx)  [![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx)  [![Codacy Badge](https://api.codacy.com/project/badge/Grade/9f39a3f9825745738946f3c11a97c3ed)](https://www.codacy.com/app/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)  [![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefs-ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/6114)
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx)[ ![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx)[ ![Codacy Badge](https://api.codacy.com/project/badge/Grade/db0d3641099f4903b2524c67a7e5a5b0)](https://www.codacy.com/manual/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)
 
 Save and load objects from SharedPreferences in a faster and simpler way.  
 This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
 
-#### Version 1.x
-  - **September, 2019** - Kotlin version
+**Version 1.x**  
+- **October, 2019** - Added multi-module
+- **September, 2019** - Kotlin version
 
 ## Getting started
 
 The first step is to include SharedPrefs-ktx into your project, for example, as a Gradle compile dependency:
 
 ```groovy
-implementation 'com.github.guilhe:sharedprefs-ktx:${LATEST_VERSION}'
+implementation 'com.github.guilhe.sharedprefs-ktx:converter-gson:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=a:SharedPrefs-ktx)  [ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-gson)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion)
+```groovy
+implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSION}'
+```
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe/SharedPrefs-ktx/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe%20AND%20a:converter-moshi)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion)
+
 ## Sample usage
-Get a hold of `SharedPreferences` instance to use the extensions `put` and `get`:
-```java
-lateinit var prefs: SharedPreferences
-...
-prefs = appContext.getSharedPreferences("test", Context.MODE_PRIVATE)
-```
 
-To save and load primitive types:
-```java
-prefs.put("key", 1)
-val a = prefs.get("key", Int::class, 1)
-```
-
-To save and load object types:
-```java
-val list = mutableListOf<Int>()
-prefs.put("key", list)
-list = prefs.get("key", object : TypeToken<List<Int>>() {}, mutableListOf()))
-```
-
-When __not__ using primitive types you should use `TypeToken` instead of `T::class`, for example:
-```java
-    @Test
-    fun getObjectWithType() {
-        val list = ArrayList<MyObjectType>()
-        list.add(MyObjectType("string", 1, true))
-        prefs.put("key", list)
-
-        assertEquals(list, prefs.get("key", object : TypeToken<List<MyObjectType>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class, ArrayList<MyObjectType>()))
-    }
-
-    @Test
-    fun getObjectWithType2() {
-        val list = ArrayList<Int>()
-        list.add(1)
-        prefs.put("key", list)
-
-        assertEquals(list, prefs.get("key", object : TypeToken<List<Int>>() {}, ArrayList()))
-        assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))
-    }
-
-    @Parcelize data class MyObjectType(val fieldA: String, val fieldB: Int, val fieldC: Boolean) : Parcelable
-```
-Both tests will ran to completion.
-
-Regarding `assertNotEquals(list, prefs.get("key", List::class, ArrayList<Int>()))` being true, I guess it's related with the fact that `public <T> T fromJson(JsonReader reader, Type typeOfT){}` method from `Gson.java` (line 886) is type unsafe\:
- _"Since Type is not parameterized by T, this method is type unsafe and should be used carefully"_.
- That's why I believe I'm getting `List<Double>` instead of `List<Integer>`.
-
-Also:
-```java
-prefs.put(prefs, "key", 1)
-prefs.get(prefs, "key", Boolean::class, false)
-```
-
-Will throw `JsonParseException`.
-
-## Binaries
-
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=a:SharedPrefs-ktx).
-
-<a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
+To use SharedPreferences with Gson check [here](../converter-gson/README.md)  
+To use SharedPreferences with Moshi check [here](../converter-moshi/README.md)
 
 ## Dependencies
 
 - [Gson](https://github.com/google/gson)
+- [Moshi](https://github.com/square/moshi)
 - [Timber](https://github.com/JakeWharton/timber)
 
 ## Bugs and Feedback
