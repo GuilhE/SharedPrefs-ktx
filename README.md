@@ -1,5 +1,5 @@
 # SharedPrefs-ktx:
-[![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx)[ ![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx)[ ![Codacy Badge](https://api.codacy.com/project/badge/Grade/db0d3641099f4903b2524c67a7e5a5b0)](https://www.codacy.com/manual/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)
+[![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx) [![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/db0d3641099f4903b2524c67a7e5a5b0)](https://www.codacy.com/manual/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefs--ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7889)
 
 Save and load objects from SharedPreferences in a faster and simpler way.  
 This project is a "Kotlin extensions" version of [SharedPrefsUtils](https://github.com/GuilhE/SharedPrefsUtils)
@@ -15,11 +15,11 @@ The first step is to include SharedPrefs-ktx into your project, for example, as 
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-gson:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-gson/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-gson/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson) [![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg)](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion)
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSION}'
 ```
-[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-moshi/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-moshi)[ ![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg) ](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion)
+[![Maven Central](https://maven-badges.herokuapp.com/maven-central/com.github.guilhe.sharedprefs-ktx/converter-moshi/badge.svg)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-moshi) [![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg)](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion)
 
 ## Sample usage
 
