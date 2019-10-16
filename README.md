@@ -1,4 +1,4 @@
-# SharedPrefs-ktx:
+# SharedPrefs-ktx
 [![Build Status](https://travis-ci.org/GuilhE/SharedPrefs-ktx.svg?branch=master)](https://travis-ci.org/GuilhE/SharedPrefs-ktx) [![codecov](https://codecov.io/gh/GuilhE/SharedPrefs-ktx/branch/master/graph/badge.svg)](https://codecov.io/gh/GuilhE/SharedPrefs-ktx) [![Codacy Badge](https://api.codacy.com/project/badge/Grade/db0d3641099f4903b2524c67a7e5a5b0)](https://www.codacy.com/manual/GuilhE/SharedPrefs-ktx?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=GuilhE/SharedPrefs-ktx&amp;utm_campaign=Badge_Grade)[![Android Arsenal](https://img.shields.io/badge/Android%20Arsenal-SharedPrefs--ktx-brightgreen.svg?style=flat)](https://android-arsenal.com/details/1/7905)
 
 Save and load objects from SharedPreferences in a faster and simpler way.  
