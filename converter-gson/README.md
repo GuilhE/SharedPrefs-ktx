@@ -58,7 +58,7 @@ prefs.get(prefs, "key", Boolean::class, false)
 Will throw `JsonParseException`.
 
 ## Binaries
-Additional binaries and dependency information for can be found at [https://search.maven.org](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson).  
+Additional binaries and dependency information for can be found [here](https://search.maven.org/artifact/com.github.guilhe.sharedprefs-ktx/converter-gson).  
 <a href='https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson?source=watch' alt='Get automatic notifications about new "SharedPrefs-ktx:gson" versions'><img src='https://www.bintray.com/docs/images/bintray_badge_bw.png'></a>
 
  [1]: https://github.com/google/gson
