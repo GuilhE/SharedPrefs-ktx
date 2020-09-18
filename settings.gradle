@@ -1,2 +1,0 @@
-include ':converter-gson', ':converter-moshi'
-rootProject.name='android-sharedprefs-ktx'
