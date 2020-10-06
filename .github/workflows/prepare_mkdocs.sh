@@ -48,5 +48,9 @@ R1="(usage/converter-gson)"
 O2="(converter-moshi)"
 R2="(usage/converter-moshi)"
 
+cat docs/index.md
+
 sed -i 's/${O1}/${R1}/g' docs/index.md
 sed -i 's/${O2}/${R2}/g' docs/index.md
+
+cat docs/index.md
