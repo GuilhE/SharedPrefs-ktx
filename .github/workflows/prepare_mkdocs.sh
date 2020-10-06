@@ -43,5 +43,10 @@ mkdir docs/usage/
 cp converter-gson/README.md docs/usage/converter-gson.md
 cp converter-moshi/README.md docs/usage/converter-moshi.md
 
-sed -i 's/(converter-gson)/(usage/converter-gson)/g' docs/index.md
-sed -i 's/(converter-moshi)/(usage/converter-moshi)/g' docs/index.md
+O1="(converter-gson)"
+R1="(usage/converter-gson)"
+O2="(converter-moshi)"
+R2="(usage/converter-moshi)"
+
+sed -i 's/${O1}/${R1}/g' docs/index.md
+sed -i 's/${O2}/${R2}/g' docs/index.md
