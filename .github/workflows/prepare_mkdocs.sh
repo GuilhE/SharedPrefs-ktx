@@ -37,7 +37,7 @@ R1="(usage/converter-gson)"
 O2="(converter-moshi)"
 R2="(usage/converter-moshi)"
 
-cat README.md | grep -v 'project website' | sed 's/${O1}/${R1}/g' | sed 's/${O1}/${R1}/g' > docs/index.md
+cat README.md | grep -v 'project website' | sed 's/${O1}/${R1}/g' | sed 's/${O2}/${R2}/g' > docs/index.md
 
 cp CHANGELOG.md docs/changelog.md
 cp CONTRIBUTING.md docs/contributing.md
@@ -46,3 +46,5 @@ cp CODE_OF_CONDUCT.md docs/conduct.md
 mkdir docs/usage/
 cp converter-gson/README.md docs/usage/converter-gson.md
 cp converter-moshi/README.md docs/usage/converter-moshi.md
+
+cat docs/index.md
