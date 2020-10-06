@@ -33,10 +33,10 @@ set -x
 
 # Copy in special files that GitHub wants in the project root.
 
-O1="\./converter-gson"
-R1="\./usage/converter-gson"
-O2="\./converter-moshi"
-R2="\./usage/converter-moshi"
+O1="(converter-gson)"
+R1="(usage/converter-gson)"
+O2="(converter-moshi)"
+R2="(usage/converter-moshi)"
 
 sed -i "s/${O1}/${R1}/g" README.md
 sed -i "s/${O2}/${R2}/g" README.md
