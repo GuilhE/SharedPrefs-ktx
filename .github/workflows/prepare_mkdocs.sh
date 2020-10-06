@@ -36,4 +36,6 @@ cat README.md | grep -v 'project website' > docs/index.md
 cp CHANGELOG.md docs/changelog.md
 cp CONTRIBUTING.md docs/contributing.md
 cp CODE_OF_CONDUCT.md docs/conduct.md
+cp converter-gson/README.md docs/conveter-gson.md
+cp converter-moshi/README.md docs/conveter-moshi.md
 #cp -r media docs/media
