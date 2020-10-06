@@ -32,6 +32,15 @@ done
 set -x
 
 # Copy in special files that GitHub wants in the project root.
+
+O1="<a href='./converter-gson'>"
+R1="<a href='./usage/converter-gson'>"
+O2="<a href='./converter-moshi'>"
+R2="<a href='./usage/converter-moshi'>"
+
+sed -i "" "s/${O1}/${R1}/g" README.md
+sed -i "" "s/${O2}/${R2}/g" README.md
+
 cat README.md | grep -v 'project website' > docs/index.md
 cp CHANGELOG.md docs/changelog.md
 cp CONTRIBUTING.md docs/contributing.md
@@ -39,11 +48,3 @@ cp CODE_OF_CONDUCT.md docs/conduct.md
 mkdir docs/usage/
 cp converter-gson/README.md docs/usage/converter-gson.md
 cp converter-moshi/README.md docs/usage/converter-moshi.md
-
-O1="converter-gson"
-R1="usage/converter-gson"
-O2="converter-moshi"
-R2="usage/converter-moshi"
-
-sed -i "" "s/${O1}/${R1}/g" docs/index.md
-sed -i "" "s/${O2}/${R2}/g" docs/index.md
