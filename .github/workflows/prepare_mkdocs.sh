@@ -37,7 +37,7 @@ R1="(usage/converter-gson)"
 O2="(converter-moshi)"
 R2="(usage/converter-moshi)"
 
-cat README.md sed -E 's/${O1}/${R1}/g' | sed -E 's/${O2}/${R2}/g' | grep -v 'project website' > docs/index.md
+cat README.md | sed -E 's/${O1}/${R1}/g' | sed -E 's/${O2}/${R2}/g' | grep -v 'project website' > docs/index.md
 
 cp CHANGELOG.md docs/changelog.md
 cp CONTRIBUTING.md docs/contributing.md
