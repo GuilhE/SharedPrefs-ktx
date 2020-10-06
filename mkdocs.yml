@@ -20,8 +20,8 @@ extra:
 nav:
   - "Overview": index.md
   - "Usage": 
-      - "Gson": converter-gson/
-      - "Moshi": converter-moshi/
+      - "Gson": usage/converter-gson.md
+      - "Moshi": usage/converter-moshi.md
   - "Changelog": changelog.md
   - "Contributing": contributing.md
   - "Code of Conduct": conduct.md
