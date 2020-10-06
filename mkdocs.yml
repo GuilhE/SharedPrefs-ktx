@@ -21,7 +21,7 @@ nav:
   - "Overview": index.md
   - "Usage": 
       - "Gson": converter-gson/index.md
-      - "Moshi": converter-moshi/
+      - "Moshi": converter-moshi/index.md
   - "Changelog": changelog.md
   - "Contributing": contributing.md
   - "Code of Conduct": conduct.md
