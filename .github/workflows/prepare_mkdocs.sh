@@ -38,8 +38,8 @@ R1="./usage/converter-gson"
 O2="./converter-moshi"
 R2="./usage/converter-moshi"
 
-sed -i "" "s/${O1}/${R1}/g" README.md
-sed -i "" "s/${O2}/${R2}/g" README.md
+sed -i "s/${O1}/${R1}/g" README.md
+sed -i "s/${O2}/${R2}/g" README.md
 
 cat README.md | grep -v 'project website' > docs/index.md
 cp CHANGELOG.md docs/changelog.md
