@@ -20,8 +20,8 @@ implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSI
 
 ## Usage
 
-To use it with Gson check [here](./converter-gson)  
-To use it with Moshi check [here](./converter-moshi)
+To use it with Gson check [here](converter-gson)  
+To use it with Moshi check [here](converter-moshi)
 
 ## Dependencies
 
