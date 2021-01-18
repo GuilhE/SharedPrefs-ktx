@@ -62,7 +62,6 @@ private fun <T> putObject(prefs: SharedPreferences, key: String, value: T, gson:
     return prefs.edit().putString(key, gson.toJson(value)).commit()
 }
 
-@Throws(JsonParseException::class)
 private fun <T> getObject(prefs: SharedPreferences, key: String, type: TypeToken<T>, default: T, gson: Gson): T {
     if (key.isEmpty()) {
         Timber.w("> getObject, key must not be empty")
@@ -76,12 +75,12 @@ private fun <T> getObject(prefs: SharedPreferences, key: String, type: TypeToken
         try {
             gson.fromJson(json, type.type) as T
         } catch (e: JsonSyntaxException) {
-            throw JsonParseException("> getObject, Object stored with Key $key is instance of other class.")
+            Timber.e("> getObject, Object stored with Key $key not able to instance to $type")
+            throw e
         }
     }
 }
 
-@Throws(JsonParseException::class)
 private fun <T> getObject(prefs: SharedPreferences, key: String, type: Class<T>, default: T, gson: Gson): T {
     if (key.isEmpty()) {
         Timber.w("> getObject, key must not be empty")
@@ -95,7 +94,8 @@ private fun <T> getObject(prefs: SharedPreferences, key: String, type: Class<T>,
         try {
             gson.fromJson(json, type)
         } catch (e: JsonSyntaxException) {
-            throw JsonParseException("> getObject, Object stored with Key $key is instance of other class.")
+            Timber.e("> getObject, Object stored with Key $key not able to instance to $type")
+            throw e
         }
     }
 }
