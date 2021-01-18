@@ -10,6 +10,8 @@ on:
       - "mkdocs.yml"
       - ".github/workflows/publish_docs.yml"
       - ".github/workflows/prepare_mkdocs.sh"
+      - "converter-gson/README.md"
+      - "converter-moshi/README.md"
 
 jobs:
   deploy:
