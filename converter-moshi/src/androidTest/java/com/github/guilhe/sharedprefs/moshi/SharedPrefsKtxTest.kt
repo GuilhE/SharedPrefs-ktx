@@ -45,7 +45,7 @@ class SharedPrefsKtxTest {
 
     @Test
     fun putObjectWithClass() {
-        prefs.put("key", 1, Int::class, moshi)
+        prefs.put("key", 1, moshi)
 
         var a = 1
         var b = prefs.get("key", Int::class, 1)
@@ -58,7 +58,7 @@ class SharedPrefsKtxTest {
 
     @Test
     fun putObjectWithType() {
-        prefs.put("key", 1, Int::class)
+        prefs.put("key", 1)
 
         val type = Int::class
         var b = prefs.get("key", type, 0)
@@ -73,17 +73,8 @@ class SharedPrefsKtxTest {
 
     @Test(expected = IllegalArgumentException::class)
     fun putObjectException1() {
-        prefs.put("", Int::class, Int::class.java)
-    }
-
-    @Test(expected = IllegalArgumentException::class)
-    fun putObjectException2() {
-        prefs.put("key", Int::class, Types.newParameterizedType(Int::class.java))
-    }
-
-    @Test(expected = IllegalArgumentException::class)
-    fun putObjectException3() {
-        prefs.put("key", Int::class.java, Types.newParameterizedType(Int::class.java))
+        prefs.put("", Int::class)
+        prefs.put("key", Types.newParameterizedType(Int::class.java))
     }
 
     @Test
@@ -95,15 +86,14 @@ class SharedPrefsKtxTest {
     @Test
     fun getObjectWithClass() {
         val a = 1
-        prefs.put("key", a, Int::class)
+        prefs.put("key", a)
         val b = prefs.get("key", Int::class, 2)
         assertEquals(a, b)
     }
 
     @Test
     fun getObjectWithType() {
-        val list = ArrayList<MyObjectType>()
-        list.add(MyObjectType("string", 1, true))
+        val list = mutableListOf(MyObjectType("string", 1, true))
         prefs.put("key", list, Types.newParameterizedType(List::class.java, MyObjectType::class.java), moshi)
 
         assertEquals(list, prefs.get("key", Types.newParameterizedType(List::class.java, MyObjectType::class.java), ArrayList<MyObjectType>(), moshi))
@@ -112,8 +102,7 @@ class SharedPrefsKtxTest {
 
     @Test
     fun getObjectWithType2() {
-        val list = mutableListOf<Int>()
-        list.add(1)
+        val list = mutableListOf(1)
         prefs.put("key", list, Types.newParameterizedType(List::class.java, Integer::class.java))
 
         assertEquals(list, prefs.get("key", Types.newParameterizedType(List::class.java, Integer::class.java), ArrayList<Int>()))
@@ -122,7 +111,7 @@ class SharedPrefsKtxTest {
 
     @Test(expected = JsonDataException::class)
     fun getObjectWithClassException() {
-        prefs.put("key", 1, Int::class)
+        prefs.put("key", 1)
         prefs.get("key", Boolean::class, false, moshi)
     }
 
@@ -135,20 +124,20 @@ class SharedPrefsKtxTest {
 
     @Test(expected = JsonDataException::class)
     fun getObjectWithTypeException2() {
-        prefs.put("key", "test", String::class, moshi)
+        prefs.put("key", "test", moshi)
         prefs.get("key", Float::class, 1f)
     }
 
     @Test(expected = IllegalArgumentException::class)
     fun getObjectWithTypeException3() {
-        prefs.put("key", 1.0, Double::class)
+        prefs.put("key", 1.0)
         //java.lang.IllegalArgumentException: Cannot serialize abstract class double
         prefs.get("key", Types.newParameterizedType(Double::class.java), "1.0")
     }
 
     @Test
     fun getObjectReturnDefault() {
-        prefs.put("key", 1, Int::class)
+        prefs.put("key", 1)
         val defaultVal = 2
         assertEquals(defaultVal, prefs.get("key1", Int::class, defaultVal))
         assertEquals(defaultVal, prefs.get("", Int::class, defaultVal, moshi))
