@@ -9,7 +9,7 @@ import androidx.test.filters.SmallTest
 import com.google.gson.Gson
 import com.google.gson.JsonParseException
 import com.google.gson.reflect.TypeToken
-import kotlinx.android.parcel.Parcelize
+import kotlinx.parcelize.Parcelize
 import org.junit.Assert.assertEquals
 import org.junit.Assert.assertNotEquals
 import org.junit.Before

@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -9,6 +10,7 @@ android {
     defaultConfig {
         minSdkVersion(AndroidConstants.minSdkVersion)
         targetSdkVersion(AndroidConstants.targetSdkVersion)
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8

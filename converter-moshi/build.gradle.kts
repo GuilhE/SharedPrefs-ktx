@@ -1,6 +1,7 @@
 plugins {
     id("com.android.library")
     kotlin("android")
+    id("kotlin-parcelize")
 }
 
 android {
@@ -9,6 +10,7 @@ android {
     defaultConfig {
         minSdkVersion(AndroidConstants.minSdkVersion)
         targetSdkVersion(AndroidConstants.targetSdkVersion)
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_1_8
@@ -17,8 +19,9 @@ android {
 }
 
 dependencies {
-    implementation(Libs.moshi)
     implementation(Libs.timber)
+    implementation(Libs.moshi)
+    androidTestImplementation("com.squareup.moshi:moshi-kotlin:1.11.0")
     androidTestImplementation(Libs.androidx_test_runner)
     androidTestImplementation(Libs.androidx_test_junit)
     androidTestImplementation(Libs.androidx_test_truth)

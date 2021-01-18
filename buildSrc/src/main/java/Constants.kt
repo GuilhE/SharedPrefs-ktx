@@ -9,19 +9,19 @@ object AndroidConstants {
 }
 
 object Versions {
-    const val build_gradle_version = "4.1.0-alpha02"
-    const val kotlin_gradle_plugin_version = "1.4.0"
+    const val build_gradle_version = "4.1.1"
+    const val kotlin_gradle_plugin_version = "1.4.21-2"
     const val bintray_plugin_version = "1.8.5"
 
     const val bintray_version = "1.8.5"
     const val dokka_version = "1.4.0"
 
-    const val kotlin_stdlib_version = "1.4.0"
+    const val kotlin_stdlib_version = "1.4.40"
     const val androidx_test_runner_version = "1.3.0"
     const val androidx_test_junit_version = "1.1.2"
     const val androidx_test_truth_version = "1.3.0"
     const val gson_version = "2.8.6"
-    const val moshi_version = "1.9.3"
+    const val moshi_version = "1.11.0"
     const val timber_version = "4.7.1"
 }
 
