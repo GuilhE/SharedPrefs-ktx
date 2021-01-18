@@ -36,12 +36,6 @@ class SharedPrefsKtxTest {
     }
 
     @Test
-    fun putObjectWithNullValue() {
-        prefs.put("key", null)
-        assertEquals("null", prefs.getString("key", null))
-    }
-
-    @Test
     fun putObjectWithClass() {
         prefs.put("key", 1, Gson())
 

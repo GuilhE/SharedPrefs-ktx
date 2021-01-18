@@ -10,7 +10,7 @@ import kotlin.reflect.KClass
 
 fun <T : Any> SharedPreferences.put(key: String, value: T, moshi: Moshi = Moshi.Builder().build()): Boolean = put(key, value, value.javaClass, moshi)
 
-fun <T> SharedPreferences.put(key: String, value: T, type: Type, moshi: Moshi = Moshi.Builder().build()): Boolean {
+fun <T : Any> SharedPreferences.put(key: String, value: T, type: Type, moshi: Moshi = Moshi.Builder().build()): Boolean {
     require(key.isNotEmpty()) { "Key must not be empty" }
     val json = moshi.adapter<T>(type).toJson(value)
     Timber.i("> putObject, storing $json with key $key")
