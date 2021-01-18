@@ -44,7 +44,8 @@ private fun <T : Any> getObject(prefs: SharedPreferences, key: String, type: Typ
         try {
             moshi.adapter<T>(type).fromJson(json)!!
         } catch (e: JsonDataException) {
-            throw ClassCastException("> getObject, Object stored with Key $key is instance of other class. (not $type)")
+            Timber.e("> getObject, Object stored with Key $key not able to instance to $type")
+            throw e
         }
     }
 }
@@ -62,7 +63,8 @@ private fun <T : Any> getObject(prefs: SharedPreferences, key: String, clazz: Cl
         try {
             moshi.adapter<T>(clazz).fromJson(json)!!
         } catch (e: JsonDataException) {
-            throw ClassCastException("> getObject, Object stored with Key $key is instance of other class. (not $clazz)")
+            Timber.e("> getObject, Object stored with Key $key not able to instance to $clazz")
+            throw e
         }
     }
 }
