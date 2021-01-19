@@ -30,7 +30,7 @@ private fun <T : Any> getObject(prefs: SharedPreferences, key: String, type: Typ
     }
     val json = prefs.getString(key, null)
     return if (json == null) {
-        Timber.w("> getObject, json is null, returning defaultValue")
+        Timber.w("> getObject, json is null for Key $key, returning defaultValue")
         default
     } else {
         try {
