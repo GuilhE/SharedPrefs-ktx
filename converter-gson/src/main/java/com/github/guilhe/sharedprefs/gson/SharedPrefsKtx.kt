@@ -31,7 +31,7 @@ private fun <T> getObject(prefs: SharedPreferences, key: String, type: TypeToken
     }
     val json = prefs.getString(key, null)
     return if (json == null) {
-        Timber.i("> getObject, json is null, returning defaultValue")
+        Timber.i("> getObject, json is null for Key $key, returning defaultValue")
         default
     } else {
         try {
@@ -50,7 +50,7 @@ private fun <T : Any> getObject(prefs: SharedPreferences, key: String, type: Cla
     }
     val json = prefs.getString(key, null)
     return if (json == null) {
-        Timber.i("> getObject, json is null, returning defaultValue")
+        Timber.i("> getObject, json is null for Key $key, returning defaultValue")
         default
     } else {
         try {
