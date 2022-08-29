@@ -10,13 +10,13 @@ To use with gson:
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-gson:${LATEST_VERSION}'
 ```
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe.sharedprefs-ktx/converter-gson)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson) [![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Agson/images/download.svg)](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Agson/_latestVersion) ![Bintray](https://img.shields.io/bintray/dt/gdelgado/android/SharedPrefs-ktx%3Amoshi)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe.sharedprefs-ktx/converter-gson)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-gson)
 
 To use with moshi:
 ```groovy
 implementation 'com.github.guilhe.sharedprefs-ktx:converter-moshi:${LATEST_VERSION}'
 ```
-[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe.sharedprefs-ktx/converter-moshi)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-moshi) [![Download](https://api.bintray.com/packages/gdelgado/android/SharedPrefs-ktx%3Amoshi/images/download.svg)](https://bintray.com/gdelgado/android/SharedPrefs-ktx%3Amoshi/_latestVersion) ![Bintray](https://img.shields.io/bintray/dt/gdelgado/android/SharedPrefs-ktx%3Agson)
+[![Maven Central](https://img.shields.io/maven-central/v/com.github.guilhe.sharedprefs-ktx/converter-moshi)](https://search.maven.org/search?q=g:com.github.guilhe.sharedprefs-ktx%20AND%20a:converter-moshi)
 
 ## Usage
 
